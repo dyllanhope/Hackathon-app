@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-const BeggarsService = require('./services/addRecord');
+const Routes = require('./routes');
 const pg = require("pg");
 const Pool = pg.Pool;
 
@@ -19,11 +19,7 @@ const pool = new Pool({
     ssl: useSSL
 });
 
-const beggarsService = BeggarsService(pool);
-
-app.get('/', (req, res) => {
-    res.send('Hello World');
-})
+Routes(app, pool);
 
 var PORT = process.env.PORT || 3000;
 
