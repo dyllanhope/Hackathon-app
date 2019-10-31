@@ -7,10 +7,14 @@ module.exports = (app, pool) => {
     //app.get('submission', res.render)
 
 
+    app.get('/', async (req, res, next) => {
+        res.render('index')
+    })
+
+
     app.get('/statistics', async (req, res, next) => {
 
-
-        res.render("statistics", {
+        res.render("dailyStats", {
             statsInfo: await dataStorage.dataReturner()
         });
 
@@ -18,15 +22,19 @@ module.exports = (app, pool) => {
 
 
     app.get('/submission', async (req, res, next) => {
-        res.render("submission");
+        res.render("whatDoYouSee");
     });
 
-    app.get('/submission/one', async (req, res, next) => {
-        res.render("submission");
+    app.get('/submission/onePerson', async (req, res, next) => {
+        res.render("onePerson");
     });
 
-return {
-    displaySubmission,
-    displayStatistics
-}
+    app.get('/submission/group', async (req, res, next) => {
+        res.render("group");
+    });
+
+    app.get('/final', async (req, res, next) => {
+        res.render("final");
+    });
+
 }
