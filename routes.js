@@ -1,21 +1,26 @@
 const AddRecord = require('./services/addRecord');
-const DataStorage = require('./services/dataStorage')
+const DataStorage = require('./services/dataStorage');
+const FetchStats = require('./services/fetchStats');
 module.exports = (app, pool) => {
+    const fetchStats = FetchStats(pool);
     const addRecord = AddRecord(pool);
     const dataStorage = DataStorage();
 
     //app.get('submission', res.render)
 
+    app.get('/login', (req, res) => {
+        // dataStorage.reporterAdder(req.body.user);
+        res.render('index');
+    })
 
     app.get('/', async (req, res, next) => {
-        res.render('index')
+        res.render('login')
     })
 
 
     app.get('/statistics', async (req, res, next) => {
-
         res.render("dailyStats", {
-            statsInfo: await dataStorage.dataReturner()
+            reports: await fetchStats.fetch()
         });
 
     });
@@ -26,6 +31,7 @@ module.exports = (app, pool) => {
     });
 
     app.get('/submission/onePerson', async (req, res, next) => {
+        dataStorage.countAdder(1);
         res.render("onePerson");
     });
 
@@ -33,7 +39,15 @@ module.exports = (app, pool) => {
         res.render("group");
     });
 
-    app.get('/final', async (req, res, next) => {
+    app.post('/final', async (req, res, next) => {
+        let data = req.body;
+        if (!req.body.count){
+            let count = dataStorage.dataReturner();
+            count = count.count;
+            data.count = count;
+        }
+        console.log(data);
+        // await addRecord.addRecord(data);
         res.render("final");
     });
 

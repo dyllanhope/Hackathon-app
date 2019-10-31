@@ -1,5 +1,5 @@
 module.exports = (pool) => {
-    const addRecord = async(data) => {               //{location: '', count: 3, reporter: '', help: false, info: ''}
+    const addRecord = async(data) => {               //{location: '', count: 3, reporter: '', help: false, information: ''}
         const record = [
             data.location,
             data.count,
