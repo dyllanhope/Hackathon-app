@@ -7,7 +7,6 @@ module.exports = (pool) => {
         info: ""
     }
 
-
     const locationAdder = (location) => {
         beggarData.location = location
     }
