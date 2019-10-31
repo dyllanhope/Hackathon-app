@@ -8,8 +8,8 @@ module.exports = (app, pool) => {
 
     //app.get('submission', res.render)
 
-    app.get('/login', (req, res) => {
-        // dataStorage.reporterAdder(req.body.user);
+    app.post('/login', (req, res) => {
+        dataStorage.reporterAdder(req.body.user);
         res.render('index');
     })
 
@@ -41,13 +41,14 @@ module.exports = (app, pool) => {
 
     app.post('/final', async (req, res, next) => {
         let data = req.body;
+        let tempData = dataStorage.dataReturner();
         if (!req.body.count){
-            let count = dataStorage.dataReturner();
-            count = count.count;
+            let count = tempData.count;
             data.count = count;
         }
-        console.log(data);
-        // await addRecord.addRecord(data);
+        data.reporter = tempData.reporter;
+        console.log(data)
+        await addRecord.addRecord(data);
         res.render("final");
     });
 
