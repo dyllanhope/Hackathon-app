@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Boogaloo|Bungee+Inline|Carter+One|Gochi+Hand|Grand+Hotel|Leckerli+One|Lobster|Merienda|Merienda+One|Nova+Mono|Oleo+Script|Rancho|Righteous|Yesteryear" rel="stylesheet">
-    <link rel="stylesheet" href="/css/image/beggars.jpg">
-    <link rel="stylesheet" href="/css/index.css">
-</head>
-<body>
-    <div class="pageHeading">Daily Statistics</div>
+<div class="dailyStats">
+    <h2>Daily statistics</h2>
     <table>
         <tr>
-            <th>Street</th>
-            <th>Beggar Count</th>
+            <th>Location</th>
+            <th>Reporter</th>
+            <th>Help</th>
+            <th>Count</th>
         </tr>
+        {{#each reports}}
         <tr>
-            <td><span class="streetNameOuput">{{streetName}}</span></td>
-            <td><span class="beggarCountOuput">{{beggarCount}}</span></td>
+            <td>{{location}}</td>
+            <td>{{reporter}}</td>
+            <td>{{help}}</td>
+            <td>{{count}}</td>
         </tr>
+        {{/each}}
     </table>
-</body>
-</html>
+    <form method="GET" action="/">
+        <button type="submit">Back</button>
+    </form>
+</div>
