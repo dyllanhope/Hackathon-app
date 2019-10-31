@@ -1,0 +1,32 @@
+
+.content{
+   background-image: url("/image/beggars.jpg");
+   justify-content: center;
+   display: flex;
+   font-size: 15px;
+   font-weight: bold;
+}
+
+.h1{
+    justify-content: center;
+    display: flex;
+    font-size: 80px;
+}
+
+.h2{
+justify-content: center;
+display: flex;
+font-size: 50px;
+
+}
+
+.group{
+    justify-content: center;
+    display: flex;
+
+}
+
+.final{
+    justify-content: center;
+    display: flex;
+}
