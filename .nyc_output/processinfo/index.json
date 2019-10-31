@@ -1,0 +1,1 @@
+{"processes":{"41b21856-49f7-4d37-a8be-bb62fdd09ca3":{"parent":null,"children":["7d1569dc-6222-4baa-bced-3dac7cfe3494"]},"7d1569dc-6222-4baa-bced-3dac7cfe3494":{"parent":"41b21856-49f7-4d37-a8be-bb62fdd09ca3","children":[]}},"files":{"/home/coder/Documents/Projects/beggar-app/beggarsService.js":["7d1569dc-6222-4baa-bced-3dac7cfe3494"]},"externalIds":{}}
