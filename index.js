@@ -30,6 +30,9 @@ app.use(bodyParser.json())
 
 app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 Routes(app, pool);
 
 var PORT = process.env.PORT || 3000;

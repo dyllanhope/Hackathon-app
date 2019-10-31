@@ -2,13 +2,19 @@
     <h2>Daily statistics</h2>
     <table>
         <tr>
-            <th>Street</th>
-            <th>Beggar Count</th>
+            <th>Location</th>
+            <th>Reporter</th>
+            <th>Help</th>
+            <th>Count</th>
         </tr>
+        {{#each reports}}
         <tr>
-            <td><span class="streetNameOuput">{{streetName}}</span></td>
-            <td><span class="beggarCountOuput">{{beggarCount}}</span></td>
+            <td>{{location}}</td>
+            <td>{{reporter}}</td>
+            <td>{{help}}</td>
+            <td>{{count}}</td>
         </tr>
+        {{/each}}
     </table>
     <form action="/">
         <button type="submit">Back</button>

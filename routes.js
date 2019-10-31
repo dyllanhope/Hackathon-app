@@ -1,14 +1,15 @@
 const AddRecord = require('./services/addRecord');
-const DataStorage = require('./services/dataStorage')
+const DataStorage = require('./services/dataStorage');
+const FetchStats = require('./services/fetchStats');
 module.exports = (app, pool) => {
+    const fetchStats = FetchStats(pool);
     const addRecord = AddRecord(pool);
     const dataStorage = DataStorage();
 
     //app.get('submission', res.render)
 
-    app.post('/login', (req, res) => {
-        console.log(req.body)
-        dataStorage.reporterAdder(req.body.user);
+    app.get('/login', (req, res) => {
+        // dataStorage.reporterAdder(req.body.user);
         res.render('index');
     })
 
@@ -18,9 +19,8 @@ module.exports = (app, pool) => {
 
 
     app.get('/statistics', async (req, res, next) => {
-
         res.render("dailyStats", {
-            statsInfo: await dataStorage.dataReturner()
+            reports: await fetchStats.fetch()
         });
 
     });
@@ -43,11 +43,14 @@ module.exports = (app, pool) => {
     });
 
     app.post('/final', async (req, res, next) => {
-        let data = req.body; //{location: '', count: 3, reporter: '', help: false, information: ''}
-        console.log(req.body.location)
-        console.log(req.body.help)
-        console.log(req.body.count)
-        await addRecord.addRecord(data);
+        let data = req.body;
+        if (!req.body.count){
+            let count = dataStorage.dataReturner();
+            count = count.count;
+            data.count = count;
+        }
+        console.log(data);
+        // await addRecord.addRecord(data);
         res.render("final");
     });
 
