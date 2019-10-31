@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-<div class="group">
-   
-    <form method="POST" action="">
-        <div class="pageHeading">How many?</div>
-        <select class="count" name="count">
+    <div class="group">
 
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+        <form method="POST" action="/final">
+            <div class="pageHeading">How many?</div>
+            <select class="count" name="count">
 
-        </select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
 
-        <div class="pageHeading">Do they need any help?</div>
-        <div class="pageHeading">
-            <label class="">
-                <span>
-                    <input class="big" type="radio" value="Yes" name="Yes" >YES
-                </span>
-            </label>
+            </select>
 
-            <label class="">
-                <span>
-                    <input class="big" type="radio" value="No" name="Yes" >NO
-                </span>
+            <div class="help">Do they need any serious help?</div>
+            <div class="yesOrNoButtons">
+                <input value=true name="help" class="big" type="radio" id='radioYes'><label for="radioYes">Yes</label>
+                <input value=false name="help" class="big" type="radio" id='radioNo'><label for="radioNo">No</label>
+            </div>
 
-            </label>
-        </div>
-
-        Enter street name:
-        <input type="text" class="streetName" name="streetName" placeholder="enter a street name" value="">
-
-    </form>
-   
-
-   
-    
-
-</div>
-
-<div>
-    <form method="GET" action="">
-        <button class="finishButton" type="submit">Finish</button>
-    </form>
-</div>
+            Enter street name:
+            <input type="text" class="streetName" name="location" placeholder="enter a street name" value="">
+                <button class="finishButton" type="submit">Finish</button>
+        </form>
+    </div>
 </body>
+
 </html>

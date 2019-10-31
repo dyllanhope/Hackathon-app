@@ -10,19 +10,16 @@
 
 <body>
     <div class="pageHeading">One Person</div>
-    <form method="POST" action="#">
+    <form method="POST" action="/final">
         <div class="streetName">Enter street name:
-            <input class="streetName" name="streetNameInputBox" placeholder="enter street name" id="streetNameInputBox">
+            <input class="streetName" name="location" placeholder="enter street name" id="streetNameInputBox">
         </div>
         <div class="help">Do they need any serious help?</div>
         <div class="yesOrNoButtons">
-            <input value="Yes" name="yes" class="big" type="radio">Yes
-            <input value="No" name="yes" class="big" type="radio">No
+            <input value=true name="help" class="big" type="radio" id='radioYes'><label for="radioYes">Yes</label>
+            <input value=false name="help" class="big" type="radio" id='radioNo'><label for="radioNo">No</label>
         </div>
-    </form>
-
-    <form method="GET" action="#">
-        <button class="finishButton">Finish</button>
+        <button type="submit" class="finishButton">Finish</button>
     </form>
 </body>
 
