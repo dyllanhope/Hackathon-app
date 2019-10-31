@@ -6,8 +6,9 @@ module.exports = (app, pool) => {
 
     //app.get('submission', res.render)
 
-    app.get('/login/:user', (req, res) => {
-        dataStorage.reporterAdder(req.params.user);
+    app.post('/login', (req, res) => {
+        console.log(req.body)
+        dataStorage.reporterAdder(req.body.user);
         res.render('index');
     })
 
@@ -30,7 +31,10 @@ module.exports = (app, pool) => {
     });
 
     app.get('/submission/onePerson', async (req, res, next) => {
+        dataStorage.infoAdder(req.body.location);
+        dataStorage.helpAdder(req.body.help);
         dataStorage.countAdder(1);
+        
         res.render("onePerson");
     });
 
@@ -40,6 +44,9 @@ module.exports = (app, pool) => {
 
     app.post('/final', async (req, res, next) => {
         let data = req.body; //{location: '', count: 3, reporter: '', help: false, information: ''}
+        console.log(req.body.location)
+        console.log(req.body.help)
+        console.log(req.body.count)
         await addRecord.addRecord(data);
         res.render("final");
     });

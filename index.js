@@ -14,7 +14,7 @@ if (process.env.DATABASE_URL && !local) {
     useSSL = true;
 }
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/begger_db';
+const connectionString = process.env.DATABASE_URL || 'postgresql://warwick:pg123@localhost:5432/beggar_db';
 
 const pool = new Pool({
     connectionString,
@@ -23,6 +23,10 @@ const pool = new Pool({
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 
 app.use(express.static(__dirname + '/public'));
 
