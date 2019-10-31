@@ -1,42 +1,44 @@
-<div class="group">
-    <form method="POST" action="/final">
-        <div class="pageHeading">How many?</div>
-        <select class="count" name="count">
+<!DOCTYPE html>
+<html lang="en">
 
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
 
-        </select>
+<body>
+    <div class="group">
 
-        <div class="pageHeading">Do they need any help?</div>
-        <div class="pageHeading">
-            <label class="">
-                <span>
-                    <input class="big" type="radio" value=true name="help" class="radio-inline"><label
-                        for="radioYes">Yes</label>
-                </span>
-            </label>
+        <form method="POST" action="/final">
+            <div class="pageHeading">How many?</div>
+            <select class="count" name="count">
 
-            <label class="">
-                <span>
-                    <input class="big" type="radio" value=false name="help" radius class="radio-inline"><label
-                        for="radioNo">No</label>
-                </span>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
 
-            </label>
-        </div>
+            </select>
 
-        Enter street name:
-        <input type="text" class="streetName" name="location" placeholder="enter a street name" value="">
-        <button class="finishButton" type="submit">Finish</button>
+            <div class="help">Do they need any serious help?</div>
+            <div class="yesOrNoButtons">
+                <input value=true name="help" class="big" type="radio" id='radioYes'><label for="radioYes">Yes</label>
+                <input value=false name="help" class="big" type="radio" id='radioNo'><label for="radioNo">No</label>
+            </div>
 
-    </form>
-</div>
+            Enter street name:
+            <input type="text" class="streetName" name="location" placeholder="enter a street name" value="">
+                <button class="finishButton" type="submit">Finish</button>
+        </form>
+    </div>
+</body>
+
+</html>
