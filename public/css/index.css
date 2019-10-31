@@ -3,13 +3,14 @@ html {
     background-size: cover;
     font-family: "Boogaloo", cursive;
     justify-content: center;
-display: flex;
-font-size: 60px;
+    display: flex;
+    font-size: 60px;
 }
 
-.pageHeading{
+.pageHeading {
    font-size: 60px;
 }
+
 .big{
      width: 2em;
      height: 2em; 
@@ -72,4 +73,9 @@ font-size: 50px;
 
 .finishButton{
      float: left;
+}
+
+.finishingButton {
+    justify-content: center;
+
 }
