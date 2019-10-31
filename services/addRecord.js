@@ -9,9 +9,6 @@ module.exports = (pool) => {
         ];
         await pool.query('INSERT INTO beggars(location, count, reporter, help, information) VALUES ($1,$2,$3,$4,$5)', record);
     }
-    const clearRecords = async () => {
-        
-    }
 
     return{
         addRecord

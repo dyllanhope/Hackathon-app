@@ -1,7 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
-const BeggarsService = require('./beggarsService');
+const BeggarsService = require('./services/addRecord');
 const pg = require("pg");
 const Pool = pg.Pool;
 
