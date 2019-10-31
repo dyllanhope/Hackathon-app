@@ -1,7 +1,10 @@
+
 .content{
-justify-content: center;
-display: flex;
-font-size: 15px;
+   background-image: url("/image/beggars.jpg");
+   justify-content: center;
+   display: flex;
+   font-size: 15px;
+   font-weight: bold;
 }
 
 .h1{
