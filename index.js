@@ -8,9 +8,11 @@ const app = express();
 
 let useSSL = false;
 let local = process.env.LOCAL || false;
+
 if (process.env.DATABASE_URL && !local) {
     useSSL = true;
 }
+
 const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/begger_db';
 
 const pool = new Pool({
@@ -20,7 +22,9 @@ const pool = new Pool({
 
 app.get('/', (req, res) => {
     res.send('Hello World');
-})
+});
+
+
 
 var PORT = process.env.PORT || 3000;
 
