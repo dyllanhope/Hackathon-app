@@ -1,16 +1,45 @@
-
-.content{
-   background-image: url("/image/beggars.jpg");
-   justify-content: center;
-   display: flex;
-   font-size: 15px;
-   font-weight: bold;
+html {
+    background-image: url("/css/image/beggar1.jpeg");
+    background-size: cover;
+    font-family: "Boogaloo", cursive;
+    justify-content: center;
+display: flex;
+font-size: 60px;
 }
 
+.pageHeading{
+   font-size: 60px;
+}
+.big{
+     width: 2em;
+     height: 2em; 
+}
+
+
+button {
+    font-family: "Boogaloo", cursive;
+    font-size: 25px;
+    justify-content: center;
+}
+
+.content{
+   justify-content: center;
+   display: flex;
+   font-size: 60px;
+   font-weight: bold;
+}
+.final{
+    font-size:40px;
+    
+}
+
+.final3{
+    font-size:40px;
+}
 .h1{
     justify-content: center;
     display: flex;
-    font-size: 80px;
+    font-size: 200px;
 }
 
 .h2{
@@ -29,4 +58,18 @@ font-size: 50px;
 .final{
     justify-content: center;
     display: flex;
+}
+
+.streetName{
+    font-size:30px;
+    font-family: "Boogaloo", cursive;
+
+}
+
+.count{
+    font-size:30px
+}
+
+.finishButton{
+     float: left;
 }

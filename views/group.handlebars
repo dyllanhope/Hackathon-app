@@ -1,47 +1,42 @@
-<div class="row">
-    <div class="col-12">
-        <div class="group">
-            <form method="POST" action="">
-                <h2>How many?</h2>
-                <select name="count">
+<div class="group">
+    <form method="POST" action="/final">
+        <div class="pageHeading">How many?</div>
+        <select class="count" name="count">
 
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
 
-                </select>
+        </select>
 
-                <h2>Do they need any help?</h2>
+        <div class="pageHeading">Do they need any help?</div>
+        <div class="pageHeading">
+            <label class="">
+                <span>
+                    <input class="big" type="radio" value=true name="help" class="radio-inline"><label
+                        for="radioYes">Yes</label>
+                </span>
+            </label>
 
-                <label class="">
-                    <span>
-                        <input type="radio" value="Yes" name="yes" class="radio-inline">YES<br>
-                    </span>
-                </label>
+            <label class="">
+                <span>
+                    <input class="big" type="radio" value=false name="help" radius class="radio-inline"><label
+                        for="radioNo">No</label>
+                </span>
 
-                <label class="">
-                    <span>
-                        <input type="radio" value="No" name="Yes" class="radio-inline">NO
-                    </span>
-
-                </label>
-
-                Enter street name:
-                <input type="text" class="streetName" name="streetName" placeholder="enter a street name" value="">
-
-            </form>
-
-            <form method="GET" action="">
-                <button type="submit">Finish</button>
-            </form>
-
+            </label>
         </div>
 
-    </div>
+        Enter street name:
+        <input type="text" class="streetName" name="location" placeholder="enter a street name" value="">
+        <button class="finishButton" type="submit">Finish</button>
+
+    </form>
+</div>
