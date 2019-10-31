@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <div>One Person</div>
-    <form method="POST" action="#">
-        <div class="streetName">Enter street name: <textarea name="streetNameInputBox" id="streetNameInputBox" cols="30" rows="10"></textarea></div>
-        <div class="help">Do they need any serious help?</div>
-        <div class="yesOrNoButtons"><button type="radio">Yes</button> <button type="radio">No</button></div>
-    </form>
-
-    <form method="GET" action="#">
-        <button class="finishButton">Finish</button>
-    </form>
+<div>One Person</div>
+<form method="POST" action="/final">
+    <div class="streetName">Enter street name: <textarea name="location" id="streetNameInputBox" cols="30"
+            rows="10"></textarea></div>
+    <div class="help">Do they need any serious help?</div>
+    <div class="yesOrNoButtons">
+        <button name="help" type="radio" value="true">Yes</button> <buttonname="help" type="radio" value="false">No</button>
+    </div>
+    <button type="submit" class="finishButton">Finish</button>
+</form>
 </body>
-</html>
