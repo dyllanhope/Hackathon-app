@@ -21,6 +21,11 @@ const pool = new Pool({
     ssl: useSSL
 });
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+app.use(express.static(__dirname + '/public'));
+
 Routes(app, pool);
 
 var PORT = process.env.PORT || 3000;
