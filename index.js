@@ -2,7 +2,6 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const BeggarsService = require('./beggarsService');
-const Routes = require('./routes');
 const pg = require("pg");
 const Pool = pg.Pool;
 
@@ -21,7 +20,6 @@ const pool = new Pool({
 });
 
 const beggarsService = BeggarsService(pool);
-const routes = Routes(beggarsService);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
