@@ -1,15 +1,24 @@
 
+
 .content{
-   background-image: url("/image/beggars.jpg");
+  
+   
    justify-content: center;
    display: flex;
    font-size: 15px;
    font-weight: bold;
 }
 
+.button{
+
+    justify-content: center;
+    display: flex;
+
+}
 .col-12{
     justify-content: center;
     display: flex;
+   font-size: 50px;
 
  }
 
@@ -17,6 +26,7 @@
     justify-content: center;
     display: flex;
     font-size: 80px;
+    color: red;
 }
 
 .h2{
