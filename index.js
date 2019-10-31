@@ -1,6 +1,7 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
+const BeggarsService = require('./beggarsService');
 const pg = require("pg");
 const Pool = pg.Pool;
 
@@ -17,6 +18,8 @@ const pool = new Pool({
     connectionString,
     ssl: useSSL
 });
+
+const beggarsService = BeggarsService(pool);
 
 app.get('/', (req, res) => {
     res.send('Hello World');
